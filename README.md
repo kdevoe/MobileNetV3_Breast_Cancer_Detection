@@ -3,7 +3,7 @@
 
 # Recommended installation
 
-From the root directory of the project, run the following commands in a terminal:
+Run all commands from root directory of the project in a terminal:
 
 1. Create a virtual environment
 
@@ -14,4 +14,5 @@ source env/bin/activate
 
 env/bin/pip install -r requirements.txt
 
-3. Run the main.py file
+3. Run the mobilenet_v3 file in the notebook directly
+
