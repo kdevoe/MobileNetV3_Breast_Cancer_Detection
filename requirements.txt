@@ -5,3 +5,5 @@ matplotlib
 pillow
 openpyxl
 pandas
+tensorflow_addons
+seaborn
