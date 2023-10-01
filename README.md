@@ -70,5 +70,7 @@ source env/bin/activate
 
 env/bin/pip install -r requirements.txt
 
-3. Run the mobilenet_v3 file in the notebook directly
+3. Download and install the [BreakHis dataset](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/) in the root directory: 
+
+3. Run the [mobilenet_v3](https://github.com/kdevoe/aai501-su23-group-1/blob/4f5177c8cab4710d3f147d7ab51067fa02038e34/mobilenet_v3_transfer_model.ipynb) notebook file to reproduce results.
 
