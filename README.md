@@ -10,7 +10,7 @@ The use of transfer learning to classify breast tumor images was investigated us
 
 Using transfer learning we were able to achieve an overall F1 score of 0.98 on the test set (inference) while keeping the model size small at ~3 million parameters. Malignant (cancerous) tumors were detected with 97% accuracy with a false-positive rate of 5%. Overall these results outperformed larger models which did not utilize transfer learning.
 
-A brief summary follows here however please see our [full paper](https://github.com/kdevoe/aai501-su23-group-1/blob/4f5177c8cab4710d3f147d7ab51067fa02038e34/Classification%20of%20Breast%20Histopathology%20Images.pdf) for detailed results.
+A brief summary follows here however please see our [full paper](https://github.com/kdevoe/aai501-su23-group-1/blob/4f5177c8cab4710d3f147d7ab51067fa02038e34/Classification%20of%20Breast%20Histopathology%20Images.pdf) or [code notebook](https://github.com/kdevoe/aai501-su23-group-1/blob/4f5177c8cab4710d3f147d7ab51067fa02038e34/mobilenet_v3_transfer_model.ipynb) for detailed results.
 
 ## Methods
 
@@ -56,8 +56,6 @@ Looking more detailed into tumor sub-types the below confusion matrix shows the 
 *Receiver operating characteristic (ROC) scores for the 8 tumor sub-types. Area under the curve (AUC) values ranged from 0.97 to 0.99 .*
 
 As a final note a manual review by the medical doctor and histopathologist on the team revealed that misclassified images were often due to either poor images or images of cellular material that is not useful for diagnosis. This shows that there is likely room for improvement in results given additional review of the data.
-
-## Full Paper
 
 ## Recommended installation
 
