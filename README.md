@@ -18,7 +18,7 @@ A brief summary follows here however please see our full paper for detailed resu
 
 MobileNetV3 large was utilized as the base architecture with custom layers added to generate a multiclass softmax output for 8 tumor types, 4 benign and 4 malignant. The total number of parameters for the model as just over 3 million.
 
-Add Image Here of Model Architecture
+<img width="490" alt="Screenshot 2023-10-01 at 2 55 19 PM" src="https://github.com/kdevoe/aai501-su23-group-1/assets/31428365/bfa081ec-a046-4174-80f8-cb507dcf4929">
 
 ### Data
 
@@ -30,21 +30,30 @@ We split the BreakHis images into 75% training, 15% validation, and 10% testing.
 
 **Layer Freezing**: The pre-trained model was frozen up to a specified layer and all following layers were fine-tuned with the BreakHis dataset. Based on the results below we selected layer 150 of 268 as the optimal layer to start training at. This layer gave the optimal results in terms of preserving the pre-trained weights while allowing the model to learn the new dataset.
 
-Image here
+<img width="755" alt="Screenshot 2023-10-01 at 2 56 08 PM" src="https://github.com/kdevoe/aai501-su23-group-1/assets/31428365/7002a28e-bc30-404a-b6c7-69e8ed3fb5c1">  
+
+*Validation accuracy given the layer in which fine-tuning is initiated.* 
 
 **Learning Rate Selection**: The optimal initial learning rate and decay rate were selected using a grid search technique. From the results below an initial learning rate of 0.001 and decay rate of 0.95 per epoch were selected based on the performance on the validation set.
 
-Image here
+![image](https://github.com/kdevoe/aai501-su23-group-1/assets/31428365/f76a8672-41c0-462f-a5db-409a7a9589d3)  
+*Validation accuracy after 13 epochs given an initial learning rate and decay rate.*
 
 ## Key Results
 
 Overall simple classification of tumors as malignant (cancerous) or benign (non-cancerous) was achieved with an F1 score of 0.98, precison of 0.98 and recall of 0.97 . The model as able to correctly classify 97% of malignant tumors with a false-positive rate of 5% on benign tumors.
 
-Image here
+<img width="516" alt="Screenshot 2023-10-01 at 2 56 53 PM" src="https://github.com/kdevoe/aai501-su23-group-1/assets/31428365/8a56d370-18e2-4fb9-9eb8-aea1f5a000bf">  
+
+*Binary classification results of the model only looking at malignant vs benign.*
 
 Looking more detailed into tumor sub-types the below confusion matrix shows the model is also generally capable of correctly classifying the 8 tumor sub-types (4 benign and 4 malignant).
 
-Image here
+![image](https://github.com/kdevoe/aai501-su23-group-1/assets/31428365/6ea11a31-969d-4c41-9df3-3dea46d1c74d)  
+*Multiclass classification results for the 8 tumor sub-types.*
+
+![image](https://github.com/kdevoe/aai501-su23-group-1/assets/31428365/a60d383d-5231-42f1-ab96-0036ecf164f0)
+*Receiver operating characteristic (ROC) scores for the 8 tumor sub-types. Area under the curve (AUC) values ranged from 0.97 to 0.99 .*
 
 As a final note a manual review by the medical doctor and histopathologist on the team revealed that misclassified images were often due to either poor images or images of cellular material that is not useful for diagnosis. This shows that there is likely room for improvement in results given additional review of the data.
 
